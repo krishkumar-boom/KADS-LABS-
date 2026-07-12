@@ -1,0 +1,12 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/client/page": "/client",
+  "/ticket/page": "/ticket",
+  "/page": "/",
+  "/profile/page": "/profile",
+  "/founder/page": "/founder",
+  "/auth/reset/page": "/auth/reset",
+  "/admin/page": "/admin",
+  "/quote/page": "/quote",
+  "/super/page": "/super"
+}

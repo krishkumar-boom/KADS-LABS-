@@ -1,0 +1,20 @@
+{
+  "app/page.tsx -> ./sections/Blogs": {
+    "id": 10749,
+    "files": [
+      "static/chunks/749.4d362546309a68af.js"
+    ]
+  },
+  "app/page.tsx -> ./sections/Careers": {
+    "id": 19647,
+    "files": [
+      "static/chunks/647.425c6e1c37a8312b.js"
+    ]
+  },
+  "components/premium/PremiumHero.tsx -> @/components/three/ShaderBackground": {
+    "id": 91902,
+    "files": [
+      "static/chunks/902.ecb7da2858f0e20d.js"
+    ]
+  }
+}
