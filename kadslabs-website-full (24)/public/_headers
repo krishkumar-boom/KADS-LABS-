@@ -1,0 +1,56 @@
+# Cache-Control headers for Vercel/Netlify static hosting.
+# These ensure fresh content after every deploy while keeping immutable assets cached.
+
+# HTML — no cache! Always revalidate.
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Version file — never cache (SW uses it to detect new deploys)
+/VERSION
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+  Pragma: no-cache
+
+# Service worker — never cache (this is critical; cached SW = stale site forever)
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+
+# Workbox/scripts — never cache
+/*/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Hashed Next.js static assets — these filenames change on deploy, safe to cache forever
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts — immutable
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images — long cache + SWR (revalidate in background)
+/*.png
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/*.jpg
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/*.jpeg
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/*.webp
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/*.svg
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/*.ico
+  Cache-Control: public, max-age=86400
+
+# PWA manifest — short cache
+/manifest.json
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Data — don't cache
+/robots.txt
+  Cache-Control: public, max-age=3600
+/sitemap.xml
+  Cache-Control: public, max-age=3600

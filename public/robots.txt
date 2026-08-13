@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /founder/
+Disallow: /super/
+Disallow: /client/
+Disallow: /profile/
+Disallow: /auth/
+Disallow: /ticket/
+Disallow: /quote/
+
+Sitemap: https://kadslabs.com/sitemap.xml
